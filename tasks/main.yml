@@ -1,0 +1,7 @@
+---
+- name: magento2 site enabled
+  notify: restart nginx
+  ansible.builtin.file:
+    src: /var/www/magento2/nginx.conf
+    dest: /etc/nginx/sites-enabled/magento2
+    state: link
